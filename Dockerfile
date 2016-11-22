@@ -43,7 +43,7 @@ RUN apt-get -y install nodejs
 
 
 # install yeoman, JHipster, angular and express
-RUN npm install -g yo
+RUN npm install -g y \
   grunt-cli \
   gulp \
   bower \
