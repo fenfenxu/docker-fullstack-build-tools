@@ -16,11 +16,12 @@ RUN gem install --no-rdoc --no-ri compass
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 RUN apt-get -y update
 
-# install python-software-properties (so you can do add-apt-repository)
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties software-properties-common
+# install python-software-properties、ssh (so you can do add-apt-repository)
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties \
+  software-properties-common\
+  openssh-server \
+  && mkdir /var/run/sshd
 
-# install SSH server so we can connect multiple times to the container
-RUN apt-get -y install openssh-server && mkdir /var/run/sshd
 
 # install oracle java from PPA
 RUN add-apt-repository ppa:webupd8team/java -y
