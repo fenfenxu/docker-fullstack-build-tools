@@ -44,11 +44,12 @@ RUN apt-get -y install nodejs
 # install yeoman, JHipster, angular and express
 RUN npm install -g yo
   grunt-cli \
+  gulp \
   bower \
   generator-jhipster@1.10.1 \
   generator-angular \
   express-generator \
-  http-server
+  http-server 
 
 # configure the "devel" and "root" users
 RUN echo 'root:devel' |chpasswd
