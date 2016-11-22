@@ -1,12 +1,12 @@
 # DOCKER-VERSION 0.7.1
 FROM      ubuntu:14.04
-MAINTAINER Oleg Kossoy <oleg@kossoy.com>
+MAINTAINER liuxu <liuluxu1989@126.com>
 
 RUN apt-get update -qq
 
 # install ruby
 RUN apt-get install -y -qq ruby-dev \
-  make\
+  make
   
 
 # install compass
@@ -32,22 +32,19 @@ RUN apt-get -y install oracle-java8-installer && apt-get clean
 RUN update-java-alternatives -s java-8-oracle
 RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> ~/.bashrc
 
-# install utilities
-RUN apt-get -y install vim git sudo zip bzip2 fontconfig curl mc
-
-# install maven
-RUN apt-get -y install maven
+# install utilities, maven
+RUN apt-get -y install vim git sudo zip bzip2 fontconfig curl mc maven
 
 # install node.js from PPA
 RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-get update
 RUN apt-get -y install nodejs
 
-# install yeoman
-RUN npm install -g yo
 
-# install JHipster, angular and express
-RUN npm install -g grunt-cli bower \
+# install yeoman, JHipster, angular and express
+RUN npm install -g yo
+  grunt-cli \
+  bower \
   generator-jhipster@1.10.1 \
   generator-angular \
   express-generator \
