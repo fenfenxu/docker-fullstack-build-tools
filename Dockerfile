@@ -5,12 +5,12 @@ MAINTAINER liuxu <liuluxu1989@126.com>
 
 # install ruby
 RUN apt-get -y update
-RUN apt-get -y install make build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev \
-  && cd /tmp \
-  && wget http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p481.tar.gz \
-  && tar -xvzf ruby-2.0.0-p481.tar.gz \
-  && cd ruby-2.0.0-p481/ \
-  && ./configure --prefix=/usr/local \
+RUN apt-get -y install make build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev
+RUN cd /tmp \
+  && wget http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p481.tar.gz 
+RUN tar -xvzf ruby-2.0.0-p481.tar.gz \
+  && cd ruby-2.0.0-p481/ 
+RUN ./configure --prefix=/usr/local \
   && make \
   && make install
 
