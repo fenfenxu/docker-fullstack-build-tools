@@ -57,7 +57,9 @@ RUN npm install -g yo \
   generator-jhipster@1.10.1 \
   generator-angular \
   express-generator \
-  http-server 
+  http-server \
+  n
+n stable
 
 # configure the "devel" and "root" users
 RUN echo 'root:devel' |chpasswd
