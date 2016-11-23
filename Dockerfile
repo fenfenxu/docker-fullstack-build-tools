@@ -59,7 +59,7 @@ RUN npm install -g yo \
   express-generator \
   http-server \
   n
-n stable
+RUN n stable
 
 # configure the "devel" and "root" users
 RUN echo 'root:devel' |chpasswd
